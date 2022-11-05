@@ -1,0 +1,47 @@
+.homeTopFold,
+.addTopfold {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+}
+.searchBarDiv {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.searchBarInput {
+  height: 30px;
+  width: 200px;
+  color: black;
+  padding: 2px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchBarInput:focus {
+  width: 205px;
+  border-bottom: 2px solid rgb(36, 45, 42);
+  font-size: 18px;
+  transition: 0.1s ease-in;
+}
+.buttonStyle {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+.nullifyTextDecoration {
+  text-decoration: none;
+}
