@@ -2,15 +2,18 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { categories } from "../../constants/addExpense";
 import { addExpense } from "../../redux/actions/expenses";
+import { useNavigate } from "react-router-dom";
 import "./form.css";
+
 const Form = () => {
+  const navigate = useNavigate();
   const cat = categories;
   const [showCategory, setshowCategory] = useState(false);
   const [title, settitle] = useState("");
   const [amount, setamount] = useState("");
   const [category, setcategory] = useState();
   const [modalOpen, setmodalOpen] = useState(false);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const handleTitle = (e) => {
     settitle(e.target.value);
   };
@@ -40,8 +43,11 @@ const Form = () => {
       category,
       createdAt: new Date(),
     };
+    console.log(data);
     dispatch(addExpense(data));
-    setmodalOpen(!modalOpen);
+    navigate("/");
+    // setmodalOpen(!modalOpen);
+    // console.log(dispathc);
   };
   return (
     <form className="formContainer">
@@ -51,6 +57,7 @@ const Form = () => {
           placeholder="Expenditure"
           value={title}
           onChange={(e) => handleTitle(e)}
+          className="inputBar"
         />
       </div>
       <div className="formItem">
@@ -62,6 +69,7 @@ const Form = () => {
           value={amount}
           pattern="[0-9]+"
           onChange={(e) => handleAmount(e)}
+          className="inputBar"
         />
       </div>
       <div className="dropdownItem">

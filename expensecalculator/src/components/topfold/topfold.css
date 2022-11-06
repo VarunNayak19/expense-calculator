@@ -6,6 +6,9 @@
   padding: 20px;
   justify-content: space-between;
 }
+.addTopfold {
+  gap: 100px;
+}
 .searchBarDiv {
   display: flex;
   align-items: center;

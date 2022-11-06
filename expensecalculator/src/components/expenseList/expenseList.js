@@ -1,24 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Card from "./card";
 import "./expenseList.css";
 
 const ExpenseList = () => {
-  const list = [
-    {
-      title: "made a purchase",
-      logo: "m",
-      createdAt: Date.now(),
-      amount: 11234,
-    },
-    {
-      title: "made a purchase",
-      logo: "m",
-      createdAt: Date.now(),
-      amount: 11234,
-    },
-  ];
+  const { expenseList: list } = useSelector((state) => state.expenses);
   return (
-    <div>{list.length ? list.map((item) => <Card item={item} />) : null}</div>
+    <div className="expenseList">
+      {list.length ? list.map((item) => <Card item={item} />) : <div></div>}
+    </div>
   );
 };
 
